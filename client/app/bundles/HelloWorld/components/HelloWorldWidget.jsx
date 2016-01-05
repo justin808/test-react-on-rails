@@ -4,6 +4,7 @@
 import React, { PropTypes } from 'react';
 import Immutable from 'immutable';
 import _ from 'lodash';
+import { Row, Col } from 'react-bootstrap';
 
 // Simple example of a React "dumb" component
 export default class HelloWorldWidget extends React.Component {
@@ -36,14 +37,18 @@ export default class HelloWorldWidget extends React.Component {
     const $$helloWorldStore = this.props.$$helloWorldStore;
     const name = $$helloWorldStore.get('name');
     return (
-      <div>
+      <div className="container">
         <h3>
           Hello, {name}!
         </h3>
-        <p>
-          Say hello to:
-          <input type="text" value={name} onChange={this._handleChange} />
-        </p>
+        <Row>
+          <Col sm={2}>
+            Say hello to:
+          </Col>
+          <Col sm={10}>
+            <input type="text" value={name} onChange={this._handleChange} />
+          </Col>
+        </Row>
       </div>
     );
   }
