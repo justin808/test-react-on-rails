@@ -19,7 +19,7 @@ if %w(development test).include? Rails.env
 
     desc "Run ruby-lint as shell"
     task :ruby do
-      cmd = "ruby-lint app config spec lib"
+      cmd = "ruby-lint app config lib"
       puts "Running ruby-lint Linters via `#{cmd}`"
       sh cmd
     end

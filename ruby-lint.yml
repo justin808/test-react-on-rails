@@ -1,13 +1,16 @@
 presenter: syntastic
 
+# These get added to whatever you specify on the command line!
 directories:
   - app
   - config
-  - spec
+# Enable if using rspec
+#  - spec
 
 ignore_paths:
   - client
   - node_modules
+  - client/node_modules
 
 analysis_classes:
   #  - argument_amount
