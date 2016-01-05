@@ -48,3 +48,19 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'therubyracer', platforms: :ruby
+
+# require: false is necessary for the linters as we only want them loaded
+# when used by the linting rake tasks.
+group :development do
+  gem("rubocop", require: false)
+  gem("ruby-lint", require: false)
+  gem("scss_lint", require: false)
+end
+
+# For Heroku deployment
+gem 'rails_12factor', group: :production
+gem 'puma', group: :production
+
+gem 'bootstrap-sass'
